@@ -41,31 +41,48 @@ function recomendacion(persona){
     if(persona.imc < 18.5){
       return (
         info.innerHTML += `
-        <h3> Recomendación </h3>
-        <p>${persona.nombre}: Te sugerimos una rutina de hipertrofia y dieta hipercalórica</p>
+        <p>De acuerdo a tus datos, debes acompañar el siguiente plan con una dieta hipercalórica</p>
+        <h3> Este es tu plan </h3>
+        <ul class='list-unstyled'>
+          <li>3x10 abdominales cortos</li>
+          <li>3x10 biceps con mancuernas</li>
+          <li>3x10 triceps en polea</li>
+          <li>3x20 sentadillas con peso</li>
+        </ul>
         `
       );
     }
     if(persona.imc >= 18.5 && persona.imc <= 24.9){
       return (
         info.innerHTML += `
-        <h3> Recomendación </h3>
-        <p>Te sugerimos la rutina de rendimiento y/o de fuerza y dieta regular</p>
+        <h3> Este es tu plan </h3>
+        <ul class='list-unstyled'>
+          <li>3x10 abdominales cortos</li>
+          <li>3x10 biceps con mancuernas</li>
+          <li>3x10 triceps en polea</li>
+          <li>3x20 sentadillas con peso</li>
+        </ul>
         `
       );
     }
     if(persona.imc > 24.9 && persona.imc < 30){
       return (
         info.innerHTML += `
-        <h3> Recomendación </h3>
-        <p>Te sugerimos la rutina para adelgazar y/o de fuerza y dieta hipocalórica</p>
+        <p>De acuerdo a tus datos, debes acompañar el siguiente plan con una dieta hipocalórica</p>
+        <h3> Este es tu plan </h3>
+        <ul class='list-unstyled'>
+          <li>3x10 abdominales cortos</li>
+          <li>3x10 biceps con mancuernas</li>
+          <li>3x10 triceps en polea</li>
+          <li>3x20 sentadillas con peso</li>
+          <li>30 min cinta</li>
+        </ul>
         `
       );
     }
     if(persona.imc >= 30){
       return (
         info.innerHTML += `
-        <h3> Recomendación </h3>
         <p>Te sugerimos hacer una consulta médica antes de comenzar el entrenamiento</p>
         `
       );
