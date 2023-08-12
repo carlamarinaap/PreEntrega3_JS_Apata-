@@ -31,6 +31,7 @@
     ></script>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body class="bodyInicio">
     <!--Inicio de encabezado-->
     <header>
@@ -95,7 +96,8 @@
           </section>
           <section class="seccion2 col-md-6 col-12">
             <h2 class="fs-2 mb-3">Quiero mi plan:</h2>
-            <form class="row">
+            <div class="plan"></div>
+            <form class="row" id="formulario">
               <div class="offset-2 col-8">
                 <div class="mb-3">
                   <label for="nombre" class="form-label">Nombre Completo</label>
@@ -106,22 +108,20 @@
                   <input type="email" class="form-control" id="correo" />
                 </div>
                 <div class="mb-3">
-                  <label for="fechaNac" class="form-label">Fecha de Nacimiento</label>
-                  <input type="date" class="form-control" id="fechaNac" />
+                  <label for="genero" class="form-label">Genero</label>
+                  <select name="genero" id="genero" class="form-select">
+                    <option value="">Elija una opción</option>
+                    <option value="F">Femenino</option>
+                    <option value="M">Masculino</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="altura" class="form-label">Altura (en cm)</label>
+                  <input type="number" class="form-control" id="altura" />
                 </div>
                 <div class="mb-3">
                   <label for="peso" class="form-label">Peso (en kg)</label>
                   <input class="form-control" type="number" id="peso" />
-                </div>
-                <div class="mb-3">
-                  <label for="objetivo" class="form-label">Objetivo</label>
-                  <select name="objetivo" id="objetivo" class="form-select">
-                    <option value="">Elija una opción</option>
-                    <option value="hipertrofia">Hipertrofia</option>
-                    <option value="adelgazar">Adelgazar</option>
-                    <option value="rendimiento">Rendimiento</option>
-                    <option value="fuerza">Fuerza</option>
-                  </select>
                 </div>
                 <div class="pb-3 text-end">
                   <button type="submit" class="btn-outline-warning btn">Enviar</button>
