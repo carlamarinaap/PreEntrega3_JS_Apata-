@@ -6,6 +6,7 @@ let botonSalir = document.querySelector('#salir')
 let correoSesion = document.querySelector('#correoSesion')
 let datos = document.querySelector("#datos");
 let listado = document.querySelector('#listado')
+let logo = document.querySelector('#logo')
 
 //Declaracion de Funciones
 function submitHandler(evt) {
@@ -120,5 +121,6 @@ function cerrarSesion() {
 form.addEventListener("submit", submitHandler);
 botonSalir.addEventListener('click', cerrarSesion);
 listado.addEventListener('click', cerrarSesion)
+logo.addEventListener('click', cerrarSesion)
 
 
