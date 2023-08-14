@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sedes | Fighter Gym | La mejor versión de vos</title>
-    <meta
-      name="description"
-      content="En esta sección encontrarás todas las sedes que tiene nuestro gimnasio"
-    />
-    <meta name="keywords" content="SEDES, DIRECCION, LUGAR, GIMNASIOS" />
+    <title>Inicio Sesión | Fighter Gym | La mejor versión de vos</title>
+    <meta name="description" content="Inicio de sesión" />
+    <meta name="keywords" content="INICIO DE SESION, LOGGING" />
 
     <link rel="icon" type="image/x-icon" href="../favicon.png" />
     <link
@@ -29,7 +26,7 @@
     ></script>
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body class="bodySedes">
+  <body class="bodyInicioSesion">
     <!--Inicio de encabezado-->
     <header>
       <div class="container-fluid pb-0">
@@ -60,21 +57,17 @@
                 <a aria-current="page" href="./staff.html">Staff</a>
               </li>
               <li class="nav-item mx-lg-3 mx-1">
-                <a class="activa" aria-current="page" href="./sedes.html">Sedes</a>
+                <a aria-current="page" href="./sedes.html">Sedes</a>
               </li>
               <li class="nav-item mx-lg-3 mx-1">
                 <a aria-current="page" href="./contacto.html">Contacto</a>
               </li>
             </ul>
             <div class="d-flex">
-              <div class="d-flex">
-                <a href="./inicia_sesion.html" class="btn btn-sm btn-outline-warning"
-                  >Inicia Sesión</a
-                >
-                <a href="./registro.html" class="btn btn-sm btn-warning mx-1"
-                  >Registrate</a
-                >
-              </div>
+              <a href="./inicia_sesion.html" class="btn btn-sm btn-outline-warning"
+                >Inicia Sesión</a
+              >
+              <a href="./registro.html" class="btn btn-sm btn-warning mx-1">Registrate</a>
             </div>
           </div>
         </nav>
@@ -82,22 +75,54 @@
     </header>
     <!--Fin de encabezado-->
 
+    <!--Inicio de principal-->
     <main class="main">
       <!-- CABECERA -->
       <div class="img_bodyLinks">
         <img src="../img/wallpaper_pages.webp" alt="cabecera" class="img-fluid" />
       </div>
       <div class="cabecera">
-        <h1 class="text-warning">Sedes</h1>
+        <h1 class="text-warning">Registro</h1>
       </div>
       <!-- Fin CABECERA -->
 
-      <!--Inicio de principal-->
-      <section class="p-4">
-        <div id="sedesContainer"></div>
+      <!-- Formulario de Inicio de Sesión -->
+      <section class="form_inicioSesion">
+        <div id="info" class="text-center"></div>
+        <form id="form_registro">
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo Electrónico</label>
+            <input class="form-control" type="email" id="correo" />
+          </div>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" />
+          </div>
+          <div class="mb-3">
+            <label for="genero" class="form-label">Genero</label>
+            <select name="genero" id="genero" class="form-select">
+              <option value="">Elija una opción</option>
+              <option value="F">Femenino</option>
+              <option value="M">Masculino</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="contrasena" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="contrasena" />
+          </div>
+          <div class="mb-3">
+            <label for="confirmacion" class="form-label">Repetir Contraseña</label>
+            <input type="password" class="form-control" id="confirmacion" />
+          </div>
+          <div class="mb-3 text-end">
+            <button type="submit" class="btn-outline-warning btn">Continuar</button>
+          </div>
+        </form>
       </section>
+      <!-- Fin formulario de Inicio de Sesión -->
     </main>
     <!--Fin de principal-->
+
     <!--Inicio del Footer-->
     <footer>
       <div class="container">
@@ -136,6 +161,6 @@
       </div>
     </footer>
     <!--Fin de Footer-->
-    <script src="../js/sedes.js"></script>
+    <script src="../js/registro.js"></script>
   </body>
 </html>

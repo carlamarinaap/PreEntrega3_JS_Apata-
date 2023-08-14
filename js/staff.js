@@ -1,4 +1,7 @@
 // Declaración de variables
+let listaProfesores = document.querySelector('#imagesContainer');
+let buscador = document.querySelector('#buscador');
+
 const staff = [
   {
     id:'SOFIA',
@@ -39,41 +42,12 @@ const staff = [
 ]
 
 // Declaración de funciones
-
-function cargarProfeElegido(profe,staff){
-  const upperCase = profe.toUpperCase();
-  const elegidos = staff.filter((el) => el.id.includes(upperCase))
-  const eleccion = document.getElementById('eleccion');
-  if (elegidos.length > 0){
-    eleccion.innerHTML += `<h3>Elegidos</h3>`
-    elegidos.forEach((profe) => {
-      eleccion.innerHTML += `
-      <div class="col-3">
-      <div class="staff_container">
-        <div class="img_container">
-          <img src=${profe.foto} alt="${profe.nombre}" />
-        </div>
-        <div class="tarjetaInterna">
-          <span class="float-end"><i class="fa-solid fa-circle-info"></i></span>
-          <h3 class="my-md-4 my-1">${profe.nombre}</h3>
-          <p>${profe.descripcion}</p>
-        </div>
-      </div>
-      </div>
-      `
-    }
-    )
-    eleccion.innerHTML += `<div><hr /></div>`
-  }
-}
-
 function cargarStaff(staff) {
   const contenedor = document.getElementById('imagesContainer');
 
   staff.forEach((profe) => {
-    
     contenedor.innerHTML += `
-    <div class="col-lg-4 col-md-6 col-12">
+    <div class="col-lg-4 col-md-6 col-12" id=${profe.id}>
     <div class="staff_container">
       <div class="img_container">
         <img src=${profe.foto} alt="${profe.nombre}" />
@@ -89,7 +63,30 @@ function cargarStaff(staff) {
   })
  }
 
-const profesorElegido = prompt('Elija un profesor: (Fernando,Gaston,Julio,Milagros,Pia,Sofia)')
+ function cargarProfeElegido(evt){
+  const contenedor = document.getElementById('imagesContainer');
+  contenedor.innerHTML = ''
+  const upperCase = evt.target.value.toUpperCase();
+  const profe = staff.filter((el) => el.id.includes(upperCase))
+  profe.forEach((profe) => {
+    contenedor.innerHTML += `
+    <div class="col-lg-4 col-md-6 col-12" id=${profe.id}>
+    <div class="staff_container">
+      <div class="img_container">
+        <img src=${profe.foto} alt="${profe.nombre}" />
+      </div>
+      <div class="tarjetaInterna">
+        <span class="float-end"><i class="fa-solid fa-circle-info"></i></span>
+        <h3 class="my-md-4 my-1">${profe.nombre}</h3>
+        <p>${profe.descripcion}</p>
+      </div>
+    </div>
+    </div>
+    `
+  })
+}
 
-cargarProfeElegido(profesorElegido,staff);
+// Eventos
+buscador.addEventListener('keyup',cargarProfeElegido);
+
 cargarStaff(staff);

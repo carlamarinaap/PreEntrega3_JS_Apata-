@@ -64,9 +64,14 @@
               </li>
             </ul>
             <div class="d-flex">
-              <a href="./inicia_sesion.html" class="btn btn-sm btn-outline-warning"
-                >Inicia Sesión</a
-              >
+              <div class="d-flex">
+                <a href="./inicia_sesion.html" class="btn btn-sm btn-outline-warning"
+                  >Inicia Sesión</a
+                >
+                <a href="./registro.html" class="btn btn-sm btn-warning mx-1"
+                  >Registrate</a
+                >
+              </div>
             </div>
           </div>
         </nav>
@@ -101,6 +106,37 @@
             <button type="submit" class="btn-outline-warning btn">Continuar</button>
           </div>
         </form>
+      </section>
+
+      <section id="sesionIniciada" class="d-none">
+        <div class="form_inicioSesion">
+          <form id="datos">
+            <p>Para obtener tu plan debés completar los siguientes datos:</p>
+            <div class="mb-3">
+              <label for="correoSesion" class="form-label">Correo Electrónico</label>
+              <input
+                class="form-control text-black"
+                type="email"
+                id="correoSesion"
+                disabled
+              />
+            </div>
+            <div class="mb-3">
+              <label for="altura" class="form-label">Altura (en cm)</label>
+              <input type="number" class="form-control" id="altura" />
+            </div>
+            <div class="mb-3">
+              <label for="peso" class="form-label">Peso (en kg)</label>
+              <input class="form-control" type="number" id="peso" />
+            </div>
+            <div class="pb-3 text-end">
+              <button type="submit" class="btn-outline-warning btn">Terminar Plan</button>
+            </div>
+          </form>
+          <div class="m-auto">
+            <a href="./inicia_sesion.html" id="salir" class="btn-warning btn">Salir</a>
+          </div>
+        </div>
       </section>
       <!-- Fin formulario de Inicio de Sesión -->
     </main>

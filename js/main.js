@@ -17,29 +17,31 @@ function validarDatos(evt) {
     (evt.target.peso.value == "")
   ) {
     plan.innerHTML = `<p class='text-danger text-center'>Debe completar todos los campos</p>`;
-  } else {
-    form.setAttribute("class", "d-none");
-    plan.innerHTML = `
+  } else if (localStorage.getItem(evt.target.correo.value)) {
+      form.setAttribute("class", "d-none");
+      plan.innerHTML = `
       <div class='text-center'>
         <h4>Hola ${evt.target.nombre.value}!</h4>
         <p>Tu plan fue creado exitosamente, para verlo debes iniciar sesión</p>
         <a href="./pages/inicia_sesion.html" class="btn btn-sm btn-outline-warning m-auto">Inicia Sesión</a>
       </div>`;
-    let imc = Math.round(evt.target.peso.value/((evt.target.altura.value/100)**2)) ;
-    console.log(imc);
-    let persona ={
-      'nombre': evt.target.nombre.value,
-      'correo': evt.target.correo.value,
-      'genero': evt.target.genero.value,
-      'altura': evt.target.altura.value,
-      'peso': evt.target.peso.value,
-      'imc': imc
-    }
-      localStorage.setItem(evt.target.correo.value, JSON.stringify(persona));
+    persona = JSON.parse(localStorage.getItem(evt.target.correo.value));
+    persona.altura = evt.target.altura.value;
+    persona.peso = evt.target.peso.value;
+    persona.imc = Math.round(evt.target.peso.value/((evt.target.altura.value/100)**2));
+    localStorage.setItem(evt.target.correo.value, JSON.stringify(persona));
+  } 
+  else {
+    form.setAttribute("class", "d-none");
+    plan.innerHTML = `
+    <div class='text-center'>
+      <h4>Hola ${evt.target.nombre.value}!</h4>
+      <p>Debes crearte un usuario para acceder a tu plan</p>
+      <a href="./pages/registro.html" class="btn btn-sm btn-outline-warning m-auto">Registrate</a>
+    </div>`;
   }
 }
 
 
 //Eventos
-
 form.addEventListener("submit", submitHandler);
